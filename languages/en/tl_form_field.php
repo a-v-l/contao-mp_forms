@@ -19,6 +19,7 @@ $GLOBALS['TL_LANG']['FFL']['mp_form_placeholder'] = ['Summary', 'Allows the outp
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_form_field']['mp_forms_optionalSubmit'] = ['Optional submit button', 'Display an optional submit button to submit the form even if there are additional pages/steps.'];
+$GLOBALS['TL_LANG']['tl_form_field']['mp_forms_optionalSubmitButton'] = ['Optional submit button label', 'Please enter the label of the optional submit button.'];
 $GLOBALS['TL_LANG']['tl_form_field']['mp_forms_backButton'] = ['Back button label', 'Please enter the label of the back button.'];
 $GLOBALS['TL_LANG']['tl_form_field']['mp_forms_backFragment'] = ['Back button URL fragment', 'You may enter an optional URL fragment here which will be added to the URL when hitting the back button (e.g. for anchor links). Omit the "#" here.'];
 $GLOBALS['TL_LANG']['tl_form_field']['mp_forms_nextFragment'] = ['Continue button URL fragment', 'You may enter an optional URL fragment here which will be added to the URL when hitting the continue button (e.g. for anchor links). Omit the "#" here.'];

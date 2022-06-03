@@ -16,8 +16,12 @@ $GLOBALS['TL_DCA']['tl_form_field']['config']['onsubmit_callback'][] = function(
     $manager = new \MPFormsFormManager((int) $dc->activeRecord->pid);
     $manager->resetData();
 };
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['mp_form_pageswitch'] = '{type_legend},type,label,mp_forms_optionalSubmit,mp_forms_backButton,slabel;{image_legend:hide},imageSubmit;{expert_legend:hide},mp_forms_backFragment,mp_forms_nextFragment,class,accesskey,tabindex;{template_legend:hide},customTpl;{invisible_legend:hide},invisible';
+// $GLOBALS['TL_DCA']['tl_form_field']['palettes']['__selector__'][] = 'mp_forms_optionalSubmit';
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['mp_form_pageswitch'] = '{type_legend},type,label,mp_forms_backButton,mp_forms_optionalSubmit,mp_forms_optionalSubmitButton,slabel;{image_legend:hide},imageSubmit;{expert_legend:hide},mp_forms_backFragment,mp_forms_nextFragment,class,accesskey,tabindex;{template_legend:hide},customTpl;{invisible_legend:hide},invisible';
+// $GLOBALS['TL_DCA']['tl_form_field']['palettes']['subpalettes']['mp_forms_optionalSubmit'] = 'mp_forms_optionalSubmitButton';
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['mp_form_placeholder'] = '{type_legend},type;{text_legend},html;{template_legend:hide},customTpl;{invisible_legend:hide},invisible';
+
+// TODO: Add mp_forms_optionalSubmitButton Subpalette
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['mp_forms_optionalSubmit'] = [
     'exclude'   => true,
@@ -26,7 +30,12 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['mp_forms_optionalSubmit'] = [
     'sql'       => "char(1) NOT NULL default ''"
 ];
 
-// TODO: Add mp_forms_optionalSubmitButton Subpalette
+$GLOBALS['TL_DCA']['tl_form_field']['fields']['mp_forms_optionalSubmitButton'] = [
+    'exclude'   => true,
+    'inputType' => 'text',
+    'eval'      => ['tl_class' => 'w50', 'maxlength' => 255],
+    'sql'       => "varchar(255) NOT NULL default ''"
+];
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['mp_forms_backButton'] = [
     'exclude'   => true,
