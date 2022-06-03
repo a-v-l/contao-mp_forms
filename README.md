@@ -21,6 +21,8 @@ with our [ajaxform](https://github.com/terminal42/contao-ajaxform) one. They wor
 > If you use the regular submit form field anywhere in your form, `mp_forms` is completely disabled and you won't have
 > any steps!
 
+You can add an `optional submit button` to offer the possibility to skip further pages and submit the form right away.
+
 ## The `Summary` element
 
 A typical use case of forms that are split into multiple steps is to summarize data that was previously entered.
