@@ -57,6 +57,7 @@ class FormMPFormPageSwitch extends Widget
         if (TL_MODE == 'BE') {
             $template = new BackendTemplate('be_wildcard');
             $template->wildcard = '### PAGE BREAK ###';
+            // TODO: Add hint if PAGE BREAK is optional
 
             return $template->parse();
         }
@@ -64,6 +65,8 @@ class FormMPFormPageSwitch extends Widget
         $manager = new MPFormsFormManager($this->pid);
 
         $this->canGoBack = !$manager->isFirstStep();
+
+        $this->isOptionalStep = $manager->isOptionalStep();
 
         return parent::parse($attributes);
     }

@@ -127,7 +127,7 @@ class MPForms
         $manager->storeData($submitted, $labels, (array) ($_SESSION['FILES'] ?? []));
 
         // Submit form
-        if ($manager->isLastStep() && 'continue' === $pageSwitchValue) {
+        if (($manager->isLastStep() && 'continue' === $pageSwitchValue) || ($manager->isOptionalStep() && 'optional' === $pageSwitchValue)) {
 
             $allData = $manager->getDataOfAllSteps();
 

@@ -288,6 +288,25 @@ class MPFormsFormManager
     }
 
     /**
+     * Check if current step is optional.
+     *
+     * @return bool
+     */
+    public function isOptionalStep()
+    {
+        $step = $this->getCurrentStep();
+
+        foreach ($this->getFieldsForStep($step) as $formField) {
+            if ($this->isPageBreak($formField) && '' !== $formField->mp_forms_optionalSubmit) {
+
+                return $formField->mp_forms_optionalSubmit;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Generates an url for the step.
      *
      * @param int $step
